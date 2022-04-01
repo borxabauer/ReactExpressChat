@@ -1,6 +1,11 @@
 const host = "https://web-develop-react-express-chat.herokuapp.com"
-const htmlGetUsers = document.querySelector("#getUsers");
+const  htmlGetUsers = document.querySelector("#getUsers");
+const  htmlGetLogin = document.querySelector("#getLogin");
 const htmlUpdateButton = document.querySelector("#updateButton");
+const htmlLoginButton=document.querySelector("#loginButton");
+
+htmlUpdateButton.addEventListener("click", updateButtonClickHandler);
+htmlLoginButton.addEventListener("click", loginButtonClickHandler);
 
 async function get(url) {
     const response = await fetch(url, {
@@ -9,16 +14,29 @@ async function get(url) {
         }
     });
     const data = await response.json();
-    return data;
+    htmlGetUsers.innerText=JSON.stringify(data);
 }
 
-async function getUsers () {
-    const users = await get(host+"/users/");
-    htmlGetUsers.innerText = JSON.stringify(users);
-};
+const data= {userName:"Pocholo",password:"1234"};
+const json=JSON.stringify(data);
+
+
+async function post(url,data){
+    const response =await fetch(
+        url,
+        {
+        method: 'POST',
+        body :data,
+        }
+    );
+    const responseData = await response.json();
+    htmlGetUsers.innerText=JSON.stringify(login)
+}
+
 
 function updateButtonClickHandler() {
-    getUsers();
+    get(host+"/users/");
 }
-
-htmlUpdateButton.addEventListener("click", updateButtonClickHandler)
+function loginButtonClickHandler(){
+    post(host+"/login/",json);
+}
