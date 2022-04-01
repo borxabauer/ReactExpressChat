@@ -8,11 +8,7 @@ htmlUpdateButton.addEventListener("click", updateButtonClickHandler);
 htmlLoginButton.addEventListener("click", loginButtonClickHandler);
 
 async function get(url) {
-    const response = await fetch(url, {
-        headers: {
-            'Accept': 'application/json'
-        }
-    });
+    const response = await fetch(url);
     const data = await response.json();
     htmlGetUsers.innerText=JSON.stringify(data);
 }
