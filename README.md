@@ -18,7 +18,7 @@ Tendrás que escribir tu propio frontend para participar en el chat.
     
 Crea los componentes y pruebalos de uno en uno.
 Disfruta de tu aplicación de chat.
-
+ 
 
 Algunos ejemplos con los que empezar:
 
