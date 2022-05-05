@@ -34,10 +34,9 @@ function Messages () {
 
     return (
         <>
-            <h3>Mensajes</h3>
-            <ul>
-                {messages}
-            </ul>
+        <h1> Mensajes </h1>
+        <h2>Respuesta GET /messages/: <span id={messages}></span></h2>
+        <button onClick={messagesButton}>Messages</button>
         </>
     )
 }
